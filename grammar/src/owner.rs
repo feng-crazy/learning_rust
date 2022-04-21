@@ -65,6 +65,12 @@ mod tests {
             }
         }
 
+        for item in bytes {
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+
         &s[..]
     }
 }

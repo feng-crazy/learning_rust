@@ -21,6 +21,11 @@ impl People {
         let gender = if self.gender == 1 { "boy" } else { "girl" };
         println!("gender: {:?}", gender);
     }
+
+    // 写方法，传递的是 &mut self 可变引用
+    fn set_gender(&mut self, gender: u32) {
+        self.gender = gender;
+    }
 }
 
 #[cfg(test)]
@@ -48,7 +53,9 @@ mod tests {
         // 就可以调用set方法了
         alice.set_name("Rose");
         alice.name();
-        assert_eq!(alice, People { name: "Rose", gender: 0 });
+        alice.set_gender(1);
+        alice.gender();
+        assert_eq!(alice, People { name: "Rose", gender: 1 });
 
 
         // 等价于  struct Empty {}
@@ -62,8 +69,10 @@ mod tests {
 
         // struct RangeFull;  // 标准库源码中RangeFull就是一个单元结构体
         assert_eq!((..), std::ops::RangeFull); //  RangeFull就是(..)，表示全范围
-
-
-
+        let i:i32 = 1;
+        let mut i1 =  i;
+        i1 = 2;
+        println!("{}", i);
+        println!("{}", i1)
     }
 }

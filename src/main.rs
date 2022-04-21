@@ -1,7 +1,14 @@
+extern crate regex;
+extern crate hello;
+
+use regex::Regex;
+use hello::hello::hello;
+
 mod config;
 mod modules;
 mod data_type_test;
-
+mod json_test;
+#[macro_use]
 
 fn main() {
     use regex::Regex;

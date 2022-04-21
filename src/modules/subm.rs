@@ -1,5 +1,5 @@
 
 pub fn sub(){
-    let testStr = format!("str: {}", "sub");
-    println!("{}", testStr)
+    let test_str = format!("str: {}", "sub");
+    println!("{}", test_str)
 }
